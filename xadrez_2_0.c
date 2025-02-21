@@ -7,17 +7,22 @@
 int main()
 {
     //Declaração das variaveis
-    int opcaoPeca, opcaoMov, i, qtdMov;
+    int opcaoPeca, opcaoMov, i, qtdMov, j;
     //Inicializando o primeiro laço do Menu
+
+    printf("Bem Vindos ao Jogo de Xadrez---\n");
     do 
     {
     //Escolha da Peça de Xadrez a ser movimentada
-    printf("\n\nQual peça vai usar agora ?\n");
+    printf("\nQual peça vai usar agora ?\n");
     printf("1. Rainha\n");
     printf("2. Bispo\n");
     printf("3. Torre\n");
-    printf("4. Para Sair\n");
+    printf("4. Cavalo\n");
+    printf("5. Para Sair\n");
     scanf("%d", &opcaoPeca);
+
+    printf("\n");
     
     switch(opcaoPeca)
     {
@@ -34,6 +39,8 @@ int main()
         printf("8. Baixo Esquerda (Diagonal)\n");
         scanf("%d", &opcaoMov);
         
+        printf("\n");
+
         switch(opcaoMov)
         {
             case 1: 
@@ -100,7 +107,7 @@ int main()
                 printf("Andou %d casa(s) para Baixo Esquerda (Diagonal)!\n", i);
             }
             break;
-            default: printf("Essa Opção só não é mais inválida do que VOCÊ !\n");
+            default: printf("\nOpção Inválida Coração. Tente Outra.\n");
         }
         
         break;
@@ -113,6 +120,8 @@ int main()
         printf("3. Baixo Direita (Diagonal)\n");
         printf("4. Baixo Esquerda (Diagonal)\n");
         scanf("%d", &opcaoMov);
+
+        printf("\n");
         
         
         switch(opcaoMov)
@@ -159,7 +168,7 @@ int main()
                 i++;
             }
             break;
-            default: printf("Essa Opção só não é mais inválida do que VOCÊ !\n");
+            default: printf("\nOpção Inválida Coração. Tente Outra.\n");
         }
         
         break;
@@ -172,6 +181,8 @@ int main()
         printf("3. Direita (Horizontal)\n");
         printf("4. Esquerda (Horizontal)\n");
         scanf("%d", &opcaoMov);
+
+        printf("\n");
         
         switch(opcaoMov)
         {
@@ -217,16 +228,144 @@ int main()
                 i++;
             }while(i <= qtdMov); 
             break;
-            default: printf("Essa Opção só não é mais inválida do que VOCÊ !\n");
+            default: printf("\nOpção Inválida Coração. Tente Outra.\n");
         }
     
-       case 4:
+        case 4:
+        //Escolha da direção para movimentar a peça
+        printf("Você deseja mover o Cavalo para qual direção ?\n");
+        printf("1. Cima e depois Direira (Horizontal)\n");
+        printf("2. Cima e depois Esquerda (Horizontal)\n");
+        printf("3. Baixo e depois Direira (Horizontal)\n");
+        printf("4. Baixo e depois Esquerda (Horizontal)\n");
+        printf("5. Direira e depois Cima (Horizontal)\n");
+        printf("6. Direira e depois Baixo (Horizontal)\n");
+        printf("7. Esquerda e depois Cima (Horizontal)\n");
+        printf("8. Esquerda e depois Baixo (Horizontal)\n");
+        scanf("%d", &opcaoMov);
+
+        printf("\n");
+
+        switch (opcaoMov)
+        {
+        case 1:
+        for(i = 1; i <= 2; i++)
+        {
+            j = i;
+            printf("Andou %d casa(s) para Cima!\n", i);//Impressão do movimento
+            while(j == 2)
+            {
+                printf("Andou %d casa(s) para Direita!\n", i);//Impressão do movimento
+                j++; //incrementando a variavel para sair do loop
+            }
+             
+        }
+            break;
+            case 2:
+            for(i = 1; i <= 2; i++)
+            {
+                j = i;
+                printf("Andou %d casa(s) para Cima!\n", i);//Impressão do movimento
+                while(j == 2)
+                {
+                    printf("Andou %d casa(s) para Esquerda!\n", i);//Impressão do movimento
+                    j++; //incrementando a variavel para sair do loop
+                }
+                 
+            }
+                break;
+                case 3:
+        for(i = 1; i <= 2; i++)
+        {
+            j = i;
+            printf("Andou %d casa(s) para Baixo!\n", i);//Impressão do movimento
+            while(j == 2)
+            {
+                printf("Andou %d casa(s) para Direita!\n", i);//Impressão do movimento
+                j++; //incrementando a variavel para sair do loop
+            }
+             
+        }
+            break;
+            case 4:
+            for(i = 1; i <= 2; i++)
+            {
+                j = i;
+                printf("Andou %d casa(s) para Baixo!\n", i);//Impressão do movimento
+                while(j == 2)
+                {
+                    printf("Andou %d casa(s) para Esquerda!\n", i);//Impressão do movimento
+                    j++; //incrementando a variavel para sair do loop
+                }
+                 
+            }
+                break;
+                case 5:
+                for(i = 1; i <= 2; i++)
+                {
+                    j = i;
+                    printf("Andou %d casa(s) para Direita!\n", i);//Impressão do movimento
+                    while(j == 2)
+                    {
+                        printf("Andou %d casa(s) para Cima!\n", i);//Impressão do movimento
+                        j++; //incrementando a variavel para sair do loop
+                    }
+                        
+                }
+                break;
+            case 6:
+            for(i = 1; i <= 2; i++)
+            {
+                j = i;
+                printf("Andou %d casa(s) para Direita!\n", i);//Impressão do movimento
+                while(j == 2)
+                {
+                    printf("Andou %d casa(s) para Baixo!\n", i);//Impressão do movimento
+                    j++; //incrementando a variavel para sair do loop
+                }
+                 
+            }
+                break;
+                case 7:
+                for(i = 1; i <= 2; i++)
+                {
+                    j = i;
+                    printf("Andou %d casa(s) para Esquerda!\n", i);//Impressão do movimento
+                    while(j == 2)
+                    {
+                        printf("Andou %d casa(s) para Cima!\n", i);//Impressão do movimento
+                        j++; //incrementando a variavel para sair do loop
+                    }
+                    
+                }
+                break;
+            case 8:
+            for(i = 1; i <= 2; i++)
+            {
+                j = i;
+                printf("Andou %d casa(s) para Esquerda!\n", i);//Impressão do movimento
+                while(j == 2)
+                {
+                    printf("Andou %d casa(s) para Baixo!\n", i);//Impressão do movimento
+                    j++; //incrementando a variavel para sair do loop
+                }
+                 
+            }
+                break;
+                        
+        default:
+            printf("\nOpção Inválida Coração. Tente Outra.\n");
+            break;
+        }
+        break;
+
+       case 5:
         printf("Saindo do Loop...\n");
         break;
         default: printf("Opção inválida vida!\n");
         
     }
-    }while(opcaoPeca != 4);
+    }while(opcaoPeca != 5);
 
     
     
